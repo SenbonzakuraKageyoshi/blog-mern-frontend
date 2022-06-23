@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { useParams } from 'react-router-dom';
+import reactMarkdown from "react-markdown";
 
 import { Post } from "../components/Post";
 import { Index } from "../components/AddComment";
@@ -41,9 +42,7 @@ export const FullPost = () => {
         tags={data.tags}
         isFullPost
       >
-        <p>
-          {data.text}
-        </p>
+        <ReactMarkdown children={data.text} />
       </Post>
       <CommentsBlock
         items={[
